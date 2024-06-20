@@ -228,8 +228,8 @@ def send_telegram_message(chat_id):
        requests.post(url, data=data) 
 
 
-daily_report = os.getenv('DAILY_REPORT')
-schedule.every().day.at('21:00').do(send_telegram_message,daily_report)
+
+schedule.every().day.at('21:00').do(send_telegram_message,os.getenv('DAILY_REPORT'))
 
 while True:
    schedule.run_pending()
