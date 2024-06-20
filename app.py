@@ -229,11 +229,11 @@ def send_telegram_message(chat_id):
 
 
 
-schedule.every().day.at('21:00').do(send_telegram_message,os.getenv('DAILY_REPORT'))
+schedule.every().day.at('21:43').do(send_telegram_message,os.getenv('DAILY_REPORT'))
 
 while True:
    schedule.run_pending()
    now = datetime.now()
-   time.sleep(300)
+   time.sleep(1)
 
 
